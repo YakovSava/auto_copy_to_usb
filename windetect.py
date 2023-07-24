@@ -1,3 +1,4 @@
+from os import listdir
 from wmi import WMI
 from abcdetector import ABCDetect, ABCDetectError
 from copeer import CopyFiles
@@ -22,13 +23,16 @@ class Detector(ABCDetect):
 		return [path for path in self._paths if len(listdir(path)) == 0]
 	
 	def _validate(self) -> bool:
-		return all([self.copeer.dir == listdir(path) for path in self._paths])
+		return self.copeer.validate(self._paths)
 	
 	def get_usb_devices(self) -> list[str]:
-			for disk in self.wmi.Win32_DiskDrive():
-				if (disk.InterfaceType == "USB") and (disk.DeviceID not in self._paths):
+			for disk in self.wmi.Win32_LogicalDisk():
+				if (disk.DriveType == 5) and (disk.DeviceID not in self._paths):
 					self._paths.append(disk.DeviceID)
 			return self._paths
 
-	def start_copy(self, frompath:str=None, todevice:list[str]=None):
-		
+	def start_copy(self, todevices:list[str]=None):
+		if todevices == self._paths:
+			return self._start_copy()
+		else:
+			return self.copper.copy(todevices)
