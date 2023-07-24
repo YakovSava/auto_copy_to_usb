@@ -18,8 +18,8 @@ class Detector(ABCDetect):
 	def _start_copy(self) -> None:
 		self.copeer.copy(self._paths)
 	
-	def _check_empty(self) -> bool:
-		return all([path for path in self._paths if len(listdir(path)) == 0])
+	def _check_empty(self) -> list[str]:
+		return [path for path in self._paths if len(listdir(path)) == 0]
 	
 	def _validate(self) -> bool:
 		return all([self.copeer.dir == listdir(path) for path in self._paths])
@@ -31,4 +31,4 @@ class Detector(ABCDetect):
 			return self._paths
 
 	def start_copy(self, frompath:str=None, todevice:list[str]=None):
-		pass
+		
