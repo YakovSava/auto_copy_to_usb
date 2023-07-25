@@ -22,8 +22,10 @@ class Detector(ABCDetect):
 	def _check_empty(self) -> list[str]:
 		return [path for path in self._paths if len(listdir(path)) == 0]
 	
-	def _validate(self) -> bool:
-		return self.copeer.validate(self._paths)
+	def _validate(self, paths:list[str]=None) -> bool:
+		if paths is None:
+			paths = self._paths
+		return self.copeer.validate(paths)
 	
 	def get_usb_devices(self) -> list[str]:
 			for disk in self.wmi.Win32_LogicalDisk():
@@ -33,6 +35,8 @@ class Detector(ABCDetect):
 
 	def start_copy(self, todevices:list[str]=None):
 		if todevices == self._paths:
-			return self._start_copy()
+			self._start_copy()
+			self._validate()
 		else:
-			return self.copper.copy(todevices)
+			self.copper.copy(todevices)
+			self._validate(todevices)
