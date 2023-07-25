@@ -1,4 +1,3 @@
-from os import listdir
 from wmi import WMI
 from abcdetector import ABCDetect, ABCDetectError
 from copeer import CopyFiles
@@ -20,7 +19,7 @@ class Detector(ABCDetect):
 		self.copeer.copy(self._paths)
 	
 	def _check_empty(self) -> list[str]:
-		return [path for path in self._paths if len(listdir(path)) == 0]
+		raise NotImplemented
 	
 	def _validate(self, paths:list[str]=None) -> bool:
 		if paths is None:
