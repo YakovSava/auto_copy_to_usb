@@ -26,17 +26,20 @@ class Detector(ABCDetect):
 		if paths is None:
 			paths = self._paths
 		return self.copeer.validate(paths)
+
+	def test_get_all_ld(self):
+		return self.wmi.Win32_LogicalDisk()
 	
 	def get_usb_devices(self) -> list[str]:
 			for disk in self.wmi.Win32_LogicalDisk():
-				if (disk.DriveType == 5) and (disk.DeviceID not in self._paths):
+				if (disk.DriveType == 2) and (disk.DeviceID not in self._paths):
 					self._paths.append(disk.DeviceID)
 			return self._paths
 
-	def start_copy(self, todevices:list[str]=None):
-		if todevices == self._paths:
+	def start_copy(self, todevices:list[str]=None) -> bool:	
+		if (todevices == self._paths) or (todevices is None):
 			self._start_copy()
-			self._validate()
+			return self._validate()
 		else:
-			self.copper.copy(todevices)
-			self._validate(todevices)
+			self.copeer.copy(todevices)
+			return self._validate(todevices)

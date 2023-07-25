@@ -21,7 +21,7 @@ class CopyFiles:
 			if len(listdir(path_to)) != 0:
 				_warn(f"Directory {path_to} not empty. Possible warnings during validation")
 			for filename in listdir(self._path_from):
-				copy2(join(self._path_from, filename))
+				copy2(join(self._path_from, filename), path_to)
 
 	def validate(self, paths:list[str]=None) -> bool:
 		original_files = listdir(self._path_from)
