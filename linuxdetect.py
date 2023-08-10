@@ -1,6 +1,6 @@
-from os import listdir, stat
-from copeer import CopyFiles
-from abcdetector import ABCDetect, ABCDetectError
+from os import popen
+from .copeer import CopyFiles
+from .abcdetector import ABCDetect, ABCDetectError
 
 class LinuxDetectError(ABCDetectError):
 	pass
@@ -25,16 +25,7 @@ class Detector(ABCDetect):
 		return self.copeer.validate(paths)
 	
 	def get_usb_devices(self) -> list[str]:
-		devices = [device  for device in listdir('/dev/') if device.startswith('sd') or device.startwith('mmcblk')]
-		for device in devices:
-			device_path = f'/dev/{device}'
-			try:
-				st = stat(device_path)
-
-				if ((st.st_mode & 0o170000) == 0o100000) or (device_path not in self._paths):
-					self._paths.append(device_path)
-			except:
-				pass
+		mountlist = popen('findmnt')
 		return self._paths
 
 	def start_copy(self, todevices:list[str]=None):

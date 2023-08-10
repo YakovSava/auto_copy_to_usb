@@ -1,6 +1,6 @@
 from wmi import WMI
-from abcdetector import ABCDetect, ABCDetectError
-from copeer import CopyFiles
+from .abcdetector import ABCDetect, ABCDetectError
+from .copeer import CopyFiles
 
 class WinDetectorError(ABCDetectError): pass
 
