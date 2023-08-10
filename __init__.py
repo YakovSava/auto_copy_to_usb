@@ -1,13 +1,13 @@
 from sys import platform
-from copeer import CopyFiles, CopyError
-from abcdetector import ABCDetect, ABCDetectError
+from .copeer import CopyFiles, CopyError
+from .abcdetector import ABCDetect, ABCDetectError
 
 class NotSupported(BaseException): pass
 
 if platform == "win32":
-	from windetect import Detector
+	from .windetect import Detector
 elif platform.startswith('linux'):
-	from linuxdetect import Detector
+	from .linuxdetect import Detector
 else:
 	raise NotSupported(f"Platform \"{platform}\" not supported!")
 	
