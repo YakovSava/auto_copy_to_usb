@@ -34,12 +34,25 @@ copeer.py:10: CopyWarning: There are extraneous files in the directory. Perhaps 
 And also when starting `__init__.py` you may see an `AssertionError` due to the fact that during validation, the flash drive was not empty, *however, in real code you can ignore this moment*
 
 #### A few other chips
-You can also get all the paths to flash drives (**Windows example**)
+You can also get all the paths to flash drives 
+
+##### Windows example
 ```Python
 all_usb_devices = detector.get_usb_devices()
 print(all_usb_devices) # ["D:", "E:"]
 ```
+##### Linux example
+```Python
+all_usb_devices = detector.get_usb_devices()
+print(all_usb_devices) # ["/media/ubuntu/430E-A770", "/media/ubuntu/CCBIN-528TYS"]
+# It only looks for mount points, not the /dev/sd* themselves.
+```
+
 And also when copying, you can specify a custom path to the flash drive or even specify any other folder you wish:
 ```Python
 assert detector.start_copy(['D:', 'C:\\path\\to\\my\\directory'])
 ```
+
+## Important note
+On linux, I specifically added such a feature that you can copy files not only to flash drives (USB), but also to memory cards (mmcblk), as well as disks, if someone still uses them (/dev/cd)
+In turn, this is not yet provided for on Windows, but I think that I will add it here soon. If you need to copy ONLY to USB, open the corresponding issue so that I make changes.
