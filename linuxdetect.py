@@ -27,9 +27,15 @@ class Detector(ABCDetect):
 	def get_usb_devices(self) -> list[str]:
 		mounts_point_list = popen('findmnt').read().splitlines()
 		mounts_point_list_splited = map(lambda x: x.split(), mounts_point_list)
-		mounts_point_list_filtred = filter(lambda x: x[1].startswith('/dev/sd') or x[1].startswith('/dev/mmcblk') or x[1].startswith('/dev/sr'), mounts_point_list_splited)
-		mounts_point_list_double_filtred = filter(lambda x: 'nodev' in x[3], mounts_point_list_filtred)
-		self._paths = filter(self._check_empty, mounts_point_list_double_filtred)
+		for info in filter(lambda x: x[1].startswith('/dev/sd') or x[1].startswith('/dev/mmcblk') or x[1].startswith('/dev/sr'), mounts_point_list_splited):
+			if info[1].startswith('/dev/sd'):
+				for info_line in popen(f'udevadm info --query=all --name={info[1]}').read().splitlines():
+					if (info_line.startswith('E: DEVPATH')) and ('usb' in info_line):
+						if info[1] not in self._paths:
+							self._paths.append(info[0])
+			else:
+				if info[1] not in self._paths:
+					self._paths.append(info[0])
 		return self._paths
 
 	def start_copy(self, todevices:list[str]=None):
