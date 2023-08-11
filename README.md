@@ -1,5 +1,5 @@
 # What is it?
-This is a program to automatically copy data from one directory to a *flash drive* (*USB sticks*), however, it is mostly configured for **Windows**, but I will try to ensure **cross-platform compatibility**
+This is a program to automatically copy data from one directory to a *flash drive* (*USB sticks*), however, it is mostly configured for **Windows** or **Linux**, but I will try to ensure **cross-platform compatibility**
 
 # Why is this necessary?
 For mass copying of data to a *USB flash drive*. I'm not sure that anyone will need it besides me.
@@ -54,5 +54,5 @@ assert detector.start_copy(['D:', 'C:\\path\\to\\my\\directory'])
 ```
 
 ## Important note
-On linux, I specifically added such a feature that you can copy files not only to flash drives (USB), but also to memory cards (mmcblk), as well as disks, if someone still uses them (/dev/cd)
-In turn, this is not yet provided for on Windows, but I think that I will add it here soon. If you need to copy ONLY to USB, open the corresponding issue so that I make changes.
+On __linux__, I specifically added such a feature that you can copy files not only to _flash drives_ (_USB_), but also to memory cards (_mmcblk_), as well as disks, if someone still uses them (_/dev/cd_)
+In turn, this is not yet provided for on __Windows__, but I think that I will add it here soon. If you need to copy _ONLY to USB_, open the corresponding _issue_ so that I make changes.
