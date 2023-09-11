@@ -31,6 +31,7 @@ class Detector(ABCDetect):
 	
 	def get_usb_devices(self) -> list[str]:
 			for disk in self.wmi.Win32_LogicalDisk():
+				print(disk.DeviceID, disk.DriveType)
 				if (disk.DriveType == 2) and (disk.DeviceID not in self._paths):
 					self._paths.append(disk.DeviceID)
 			return self._paths

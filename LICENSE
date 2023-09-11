@@ -1,94 +1,21 @@
-Данная лицензия принадлежит юридическому лицу Савельев Яков (далее: "Создатель программного обеспечения") и представляет собой лицензию на авторское право свободного, проприетарного или закрытого программного обеспечения на основании законов "1259 Гражданского кодекса российской федерации" принятую Пленумом РФ от 26.03.2009, а так же законом "Номер 94-553 соединённых штатов Америки от 1976 года" принятую Джеральдом Фордом.
+MIT License
 
-Основные положения лицензии:
-1.1 Лицензия распространяется только на объекты, созданные создателем программного обеспечения
-1.2 Лицензия принадлежит создателю программного обеспечения за исключением указанные в пункте 1.3
-1.3 Лицензия так же может принадлежать иным юридическим лицам, индивидуальным предпринимателям, компаниям, коммунам и иным лицам и/или объединениям которые пользовались интеллектуальными услугами создателя программного обеспечения
-1.4 Лицензия распространяется в двух копиях находящиеся в одном текстовом файле кодировки UTF-8. Лицензия написана на английском и русском языках
+Copyright (c) 2023 Yakov Savelev
 
-Положения лицензии в отношении Проприетарного программного обеспечения:
-2.1 Программное обеспечение запрещено к распространению без обфускации или иного способа сокрытия изначального кода
-2.1.1 Дизассемблирование кода и его модификация в этом случае разрешена
-2.2 Проприетарное программное обеспечение разрешено свободно и бесплатно распространять, однако к открытому исходному коду, необходимо получить доступ или заплатить сумму указанную в положении 2.5
-2.3 Проприетарная часть лицензии не распространяется на рисунки и творческую часть программного обеспечения, за исключением 3D моделей
-2.4 Программное обеспечение может принадлежать более чем 2-ум лицам
-2.5 Плата за программное обеспечение, происходит посредством предоставления услуг платёжными системами не связанными с юридическим лицом. Эти платёжные системы описаны в пунктах 2.5.1 и 2.5.2. Плата за доступ к проприетарной лицензии составляет 2.50$ (два доллара пятьдесят центов) или 200.00₽ (двести рублей ноль копеек). Купивший лицензию человек, будет указан в лицензии так, как описано в положениях 5.2.1 и 5.2.2
-2.5.1 Услуга по переводу, хранению и иным денежным махинациям в сети "Интернет", предоставляется банком «Сбербанк России» (ОГРН 1027700132195). Пользовательское соглашение размещено по следующему адресу: https://salute.sber.ru/salute_terms/
-2.5.2 Услуга по переводу, хранению и иным денежным мазинациям в сети "Интернет", предоставляется банком АО "ТИНЬКОФФ БАНК" реквизиты, ИНН: 7710140679, ОГРН: 1027739642281, ОКПО: 29290881. Пользовательское соглашение АО "Тинькофф банк" размещено по следующему адресу: https://acdn.tinkoff.ru/static/documents/27eb6dc9-8296-4d65-b464-9d191db3a0fa.pdf
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-Положения лицензии в отношении Закрытого программного обеспечения:
-3.1 Закрытое программное обеспечение запрещено к распространению в открытом виде, без обфускации и иных методов сокрытия исходного кода за исключением положения описанного в пункте 3.1.1 и 3.1.2
-3.1.1 Дизассемблирование кода и его модификация разрешены
-3.1.2 Дополнение к пункту 3.1.1 распространение дизассемблированного, модифицированного и в последующем перекомпилированого программного обеспечения запрещено
-3.2 Доступ к исходному коду разрешён только при условии описанном в 1.3 заказчику интеллектуальной услуги или создателю программного обеспечения
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-Положения лицензии в отношении Открытого программного обеспечения:
-4.1 Открытое программное обеспечение разрешено распространять и модифицировать (при условии описанном в 4.1.1), а так же использовать, компилировать и иные действия в любых целях
-4.1.1 При модификации чего-либо необходимо либо отправить "pull request" на платформе GitHub, либо необходимо указывать владельца изначального файла программного обеспечения, а именно создателя программного обеспечения
-4.1.2 При модификации исходного кода, разрешено менять лицензию, однако соблюдение положения 4.1.1 необходимо
-4.2 Разрешено коммерческое, а так де некоммерческое использование исходного кода
-4.3 Создатель программного обеспечения не несёт ответственность за то что могло произойти с исходным кодом.
-4.3.1 Если вы можете исправить ошибку в программном обеспечении, пожалуйста, откройте "pull request" в соответствующем репозитории на GitHub
-4.4 При невозможности запуска (недостатке знаний) создатель программного обеспечения не несёт ответственность и не обязан компилировать код в единый исполняемый файл
-
-Заключительные положения:
-5.1 Услуги по хранению кода предоставляются компанией Microsoft на площадке github.com созданный компанией GitHub, Inc (ранее называвшейся Logical Awesome)
-5.2 В начале каждой копии документа указывается владелец на программное обеспечение
-5.2.1 Начало документа описано следующими словами:
-##
-## - Yakov Savel'ev
-## - ChatGPT
-## - Иной владелец
-## - Иной владелец
-5.2.1.1 Искусственный интеллект ChatGPT созданный компанией OpenAI не является полноправным автором программного обеспечение ввиду того что он лишь подсказывал как писать программное обеспечение, а не писал его полноценно
-5.2.2 В случае с проприетарным программным обеспечением после написания имени владельца при покупке доступа к исходному коду будет написан следующий текст: "<= pay =>"
-5.3 При изменении условий лицензии, владелец должен оповестить что условия изменены
-5.3.1 Использовать устаревшие версии лицензии разрешено, но нежелательно
-
-
-This license belongs to the legal entity Saveliev Yakov (hereinafter: "Creator of the software") and represents a copyright license for free, proprietary or closed software based on the laws "1259 of the Civil Code of the Russian Federation" adopted by the Plenum of the Russian Federation on 26.03.2009, as well as the law "Number 94-553 of the United States of America of 1976" adopted by Gerald Ford.
-
-The main provisions of the license:
-1.1 The license applies only to objects created by the creator of the software
-1.2 The license belongs to the creator of the software with the exception of those specified in clause 1.3
-1.3 The license may also belong to other legal entities, individual entrepreneurs, companies, communes and other persons and/or associations that have used the intellectual services of the creator of the software
-1.4 The license is distributed in two copies located in one UTF-8 encoding text file. The license is written in English and Russian
-
-License provisions for Proprietary Software:
-2.1 The software is prohibited for distribution without obfuscation or any other way of hiding the original code
-2.1.1 Disassembly of the code and its modification is allowed in this case
-2.2 Proprietary software is allowed to be freely and free of charge distributed, however, open source code must be accessed or paid the amount specified in regulation 2.5
-2.3 The proprietary part of the license does not apply to drawings and the creative part of the software, with the exception of 3D models
-2.4 The Software may belong to more than 2 persons
-2.5 Payment for the software is made through the provision of services by payment systems not associated with a legal entity. These payment systems are described in paragraphs 2.5.1 and 2.5.2. The fee for access to a proprietary license is $2.50 (two dollars and fifty cents) or 200.00₽ (two hundred rubles zero kopecks). The person who bought the license will be listed in the license as described in provisions 5.2.1 and 5.2.2
-2.5.1 The service for transfer, storage and other monetary frauds on the Internet is provided by Sberbank of Russia Bank (OGRN 1027700132195). The User Agreement is posted at the following address: https://salute.sber.ru/salute_terms/
-2.5.2 The service of transfer, storage and other monetary transactions on the Internet is provided by the bank of JSC TINKOFF BANK details, TIN: 7710140679, OGRN: 1027739642281, OKPO: 29290881. The User Agreement of JSC "Tinkoff Bank" is posted at the following address: https://acdn.tinkoff.ru/static/documents/27eb6dc9-8296-4d65-b464-9d191db3a0fa.pdf
-
-License provisions for Closed Software:
-3.1 Closed software is prohibited for distribution in open form, without obfuscation and other methods of hiding the source code, with the exception of the provision described in paragraphs 3.1.1 and 3.1.2
-3.1.1 Disassembly of the code and its modification are allowed
-3.1.2 Addition to clause 3.1.1 distribution of disassembled, modified and subsequently recompiled software is prohibited
-3.2 Access to the source code is allowed only under the condition described in 1.3 to the customer of the intellectual service or the creator of the software
-
-License provisions for Open Source Software:
-4.1 Open Source software is allowed to distribute and modify (subject to the conditions described in 4.1.1), as well as use, compile and other actions for any purpose
-4.1.1 When modifying something, you must either send a "pull request" on the GitHub platform, or you must specify the owner of the original software file, namely the creator of the software
-4.1.2 When modifying the source code, it is allowed to change the license, but compliance with the provision 4.1.1 is necessary
-4.2 Commercial as well as non-commercial use of the source code is allowed
-4.3 The creator of the software is not responsible for what may have happened to the source code.
-4.3.1 If you can fix a bug in the software, please open the "pull request" in the corresponding repository on GitHub
-4.4 If it is impossible to run (lack of knowledge), the creator of the software is not responsible and is not obliged to compile the code into a single executable file
-
-Final provisions:
-5.1 Code storage services are provided by Microsoft on the site github.com created by GitHub, Inc (formerly called Logical Awesome)
-5.2 At the beginning of each copy of the document, the owner of the software is indicated
-5.2.1 The beginning of the document is described in the following words:
-##
-## - Yakov Savel'ev
-## - ChatGPT
-## - Other owner
-## - Other owner
-5.2.1.1 Artificial intelligence ChatGPT created by OpenAI is not a full-fledged author of the software due to the fact that he only suggested how to write software, and did not write it fully
-5.2.2 In the case of proprietary software, after writing the owner's name when purchasing access to the source code, the following text will be written: "<= pay =>"
-5.3 When changing the terms of the license, the owner must notify that the terms have been changed
-5.3.1 It is allowed to use outdated versions of the license, but it is undesirable
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
