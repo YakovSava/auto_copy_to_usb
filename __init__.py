@@ -2,27 +2,32 @@ from sys import platform
 from .copeer import CopyFiles, CopyError
 from .abcdetector import ABCDetect, ABCDetectError
 
-class NotSupported(BaseException): pass
+
+class NotSupported(BaseException):
+    pass
+
 
 if platform == "win32":
-	from .windetect import Detector
+    from .windetect import Detector
 elif platform.startswith('linux'):
-	from .linuxdetect import Detector
+    from .linuxdetect import Detector
+elif platform == "darwin":
+    from .macdetect import Detector
 else:
-	raise NotSupported(f"Platform \"{platform}\" not supported!")
-	
-if __name__ == '__main__':
-	copy = CopyFiles('from')
-	detector = Detector(copy)
+    raise NotSupported(f"Platform \"{platform}\" not supported!")
 
-	assert detector.start_copy(['D:/']) # for Windows
+if __name__ == '__main__':
+    copy = CopyFiles('from')
+    detector = Detector(copy)
+
+    assert detector.start_copy(['D:/'])  # for Windows
 else:
-	assert issubclass(Detector, ABCDetect)
+    assert issubclass(Detector, ABCDetect)
 
 __all__ = (
-	Detector,
-	CopyFiles,
-	ABCDetect,
-	CopyError,
-	ABCDetectError
+    Detector,
+    CopyFiles,
+    ABCDetect,
+    CopyError,
+    ABCDetectError
 )
