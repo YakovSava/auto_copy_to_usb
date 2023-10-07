@@ -8,6 +8,8 @@ if platform == "win32":
 	from .windetect import Detector
 elif platform.startswith('linux'):
 	from .linuxdetect import Detector
+elif platform == "darwin":
+	from .macdetect import Detector
 else:
 	raise NotSupported(f"Platform \"{platform}\" not supported!")
 	

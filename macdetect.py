@@ -1,12 +1,12 @@
 from os import popen, listdir
 from os.path import isdir
 from .copeer import CopyFiles
-from .abcdetect import ABCDetect, ABCDetectError
+from .abcdetector import ABCDetect, ABCDetectError
 
 class MacDetectError(ABCDetectError):
 	pass
 
-class MacDetector(ABCDetect):
+class Detector(ABCDetect):
 
 	def __init__(self, copeer:CopyFiles=None):
 		if not copeer:
@@ -25,9 +25,11 @@ class MacDetector(ABCDetect):
 
 	def get_usb_devices(self) -> list[str]:
 		for line in popen('diskutil list | grep /dev/').read().splitlines():
+			print('Line: ', line)
 			if popen(f'diskutil info {line.split()[0]} | grep Protocol').read().split()[1] == 'USB':
 				mnt_point = ('/Volume/' + popen(f'diskutil list {line.split()[0]}').read().splitlines()[-1].split()[2])
 				if (isdir(mnt_point) and (mnt_point not in self._paths)):
+					print("Mount point: ", mnt_point)
 					self._paths.append(mnt_point)
 		return self._paths
 
