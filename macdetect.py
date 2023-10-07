@@ -1,4 +1,5 @@
 from os import popen, listdir
+from os.path import isdir
 from .copeer import CopyFiles
 from .abcdetect import ABCDetect, ABCDetectError
 
@@ -23,7 +24,12 @@ class MacDetector(ABCDetect):
 		return self.copeer.validate(paths)
 
 	def get_usb_devices(self) -> list[str]:
-		pass
+		for line in popen('diskutil list | grep /dev/').read().splitlines():
+			if popen(f'diskutil info {line.split()[0]} | grep Protocol').read().split()[1] == 'USB':
+				mnt_point = ('/Volume/' + popen(f'diskutil list {line.split()[0]}').read().splitlines()[-1].split()[2])
+				if (isdir(mnt_point) and (mnt_point not in self._paths)):
+					self._paths.append(mnt_point)
+		return self._paths
 
 	def start_copy(self, todevices:list[str]=None):
 		if (todevices == self._paths) or (todevices is None):
