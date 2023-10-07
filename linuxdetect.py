@@ -39,7 +39,7 @@ class Detector(ABCDetect):
 		return self._paths
 
 	def start_copy(self, todevices:list[str]=None):
-		if (todevices == self._path) or (todevices is None):
+		if (todevices == self._paths) or (todevices is None):
 			self._start_copy()
 			return self._validate()
 		else:
