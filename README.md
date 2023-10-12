@@ -47,6 +47,11 @@ all_usb_devices = detector.get_usb_devices()
 print(all_usb_devices) # ["/media/ubuntu/430E-A770", "/media/ubuntu/CCBIN-528TYS"]
 # It only looks for mount points, not the /dev/sd* themselves.
 ```
+##### Mac OS (OS X) example
+```Python
+all_usb_devices = detector.get_usb_devices()
+print(all_usb_devices) # ["/Volumes/YourUSB", "/Volumes/usb_device"]
+```
 
 And also when copying, you can specify a custom path to the flash drive or even specify any other folder you wish:
 ```Python
